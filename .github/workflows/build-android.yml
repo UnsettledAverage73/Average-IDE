@@ -1,0 +1,46 @@
+name: Build Android APK
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🏗 Checkout
+        uses: actions/checkout@v4
+
+      - name: 🏗 Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: app/package-lock.json
+
+      - name: 🏗 Setup EAS
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: 📦 Install dependencies
+        run: |
+          cd app
+          npm install
+
+      - name: 🚀 Build APK
+        run: |
+          cd app
+          eas build --platform android --profile preview --non-interactive --local --output=average-ide.apk
+
+      - name: 📦 Create Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/heads/main')
+        with:
+          files: app/average-ide.apk
+          tag_name: v1.0.0
+          name: Average IDE v1.0.0
+          body: "Official Android APK for Average IDE."
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

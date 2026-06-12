@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "average-app",
-    "slug": "average-app",
+    "name": "average-ide",
+    "slug": "average-ide",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -10,18 +10,27 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.average.ide",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
-      }
+      },
+      "permissions": [
+        "android.permission.CAMERA"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
       "expo-barcode-scanner"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "27072a44-a957-4f6a-bc04-8994ecb53683"
+      }
+    }
   }
 }
