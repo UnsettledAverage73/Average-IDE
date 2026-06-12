@@ -156,9 +156,16 @@ async def lifespan(app: FastAPI):
         print("🧠 Checking Neural Resources in background...")
         success = await ensure_nomic_model()
         if not success:
-            print("❌ CRITICAL WARNING: Embedding model failed to load. RAG features will be broken.")
-        else:
-            print("✅ Neural Resources Active.")
+            print("❌ Ollama not detected. Launching instruction prompt.")
+            try:
+                # Launch the GUI prompt in a separate process
+                import subprocess
+                subprocess.Popen([sys.executable, "ollama_gui.py"])
+            except Exception as e:
+                print(f"Failed to launch GUI prompt: {e}")
+            return
+            
+        print("✅ Neural Resources Active.")
 
     provision_task = asyncio.create_task(provision_bg())
 

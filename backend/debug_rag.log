@@ -108,3 +108,15 @@ Attempting to index file: ./average_cli.py
 AST Chunking failed for ./average_cli.py: 'tree_sitter.Parser' object has no attribute 'set_language'. Falling back.
 Chunking content of size: 1355
 Generated 2 chunks.
+Initializing LanceDB at /home/unsettledaverage73/.localdev/lancedb
+DB connection established. Type: <class 'lancedb.db.LanceDBConnection'>, Truthy: True
+Loaded 2 indexed files from state.
+Opened existing table 'code_index'
+Table 'chat_index' not found (will be created on first index)
+Table 'memory_index' not found (will be created on first memory)
+Initializing LanceDB at /home/unsettledaverage73/.localdev/lancedb
+DB connection established. Type: <class 'lancedb.db.LanceDBConnection'>, Truthy: True
+Loaded 2 indexed files from state.
+Opened existing table 'code_index'
+Table 'chat_index' not found (will be created on first index)
+Table 'memory_index' not found (will be created on first memory)
