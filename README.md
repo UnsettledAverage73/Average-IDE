@@ -34,14 +34,34 @@ python main.py
 ```
 *The backend runs on port 8000 and connects to the relay at ws://localhost:3000.*
 
-### 4. Setup the Mobile App
-The mobile app is your interface to the system.
+### 4. Setup the Mobile App (Web)
+The mobile app is your interface to the system. You can run it locally or deploy it to Vercel.
+
+**Local Development:**
 ```bash
 cd app
 npm install
 npx expo start --tunnel
 ```
-*Scan the QR code with the Expo Go app (Android) or Camera app (iOS).*
+
+**Deploy to Vercel:**
+1. Export the web build:
+   ```bash
+   cd app
+   npx expo export -p web
+   ```
+2. Deploy the `dist` folder:
+   ```bash
+   cd dist
+   vercel --prod
+   ```
+
+## 🌐 Global Distribution
+To serve Average IDE to the world:
+1. **Landing Page**: Deploy the `/landing-page` folder to Vercel.
+2. **Web App**: Deploy the `/app/dist` folder to Vercel.
+3. **Relay**: Deploy the `/relay` folder to a provider that supports WebSockets (e.g., Render, Railway, or Fly.io).
+4. **Local Node**: Distribute the compiled binary from Step 3 to your users.
 
 ## 🛠️ Features
 - **Privacy-First**: AI processing happens locally on your machine via Ollama.
