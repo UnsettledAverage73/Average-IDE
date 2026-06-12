@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Average IDE | Private AI IDE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(90deg, #fff 0%, #666 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <nav class="p-6 border-b border-zinc-800 flex justify-between items-center">
+        <span class="text-xl font-bold tracking-tighter">AVERAGE</span>
+        <div class="space-x-6 text-sm font-medium text-zinc-400">
+            <a href="#" class="hover:text-white transition">Docs</a>
+            <a href="https://github.com/UnsettledAverage73/Average-IDE" class="hover:text-white transition">GitHub</a>
+        </div>
+    </nav>
+
+    <main class="flex-grow flex flex-col items-center justify-center px-6 py-24 text-center">
+        <h1 class="text-6xl md:text-8xl font-black tracking-tighter mb-8 gradient-text">
+            THE PRIVACY-FIRST AI IDE.
+        </h1>
+        <p class="text-zinc-400 text-lg md:text-xl max-w-2xl mb-12">
+            Control your local development environment from any device. 
+            Secure, offline-capable, and completely private.
+        </p>
+
+        <div class="flex flex-col md:flex-row gap-4 mb-16">
+            <a href="https://dist-beige-omega-65.vercel.app" class="bg-white text-black px-8 py-4 font-bold rounded-sm hover:bg-zinc-200 transition">
+                LAUNCH WEB APP
+            </a>
+            <a href="#download" class="border border-zinc-700 px-8 py-4 font-bold rounded-sm hover:bg-zinc-900 transition">
+                DOWNLOAD LOCAL NODE
+            </a>
+        </div>
+
+        <div id="download" class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
+            <div class="p-8 border border-zinc-800 rounded-sm text-left">
+                <h3 class="font-bold mb-2">Windows</h3>
+                <p class="text-zinc-500 text-sm mb-6">v1.0.0 • .exe binary</p>
+                <button disabled class="w-full py-2 bg-zinc-900 text-zinc-500 font-bold cursor-not-allowed">COMING SOON</button>
+            </div>
+            <div class="p-8 border border-zinc-800 rounded-sm text-left">
+                <h3 class="font-bold mb-2">macOS</h3>
+                <p class="text-zinc-500 text-sm mb-6">v1.0.0 • Apple Silicon / Intel</p>
+                <button disabled class="w-full py-2 bg-zinc-900 text-zinc-500 font-bold cursor-not-allowed">COMING SOON</button>
+            </div>
+            <div class="p-8 border border-zinc-800 rounded-sm text-left">
+                <h3 class="font-bold mb-2">Linux</h3>
+                <p class="text-zinc-500 text-sm mb-6">v1.0.0 • x64 AppImage</p>
+                <button disabled class="w-full py-2 bg-zinc-900 text-zinc-500 font-bold cursor-not-allowed">COMING SOON</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="p-12 border-t border-zinc-900 text-center text-zinc-600 text-xs">
+        &copy; 2026 AVERAGE IDE. LOCAL MODELS, GLOBAL IMPACT.
+    </footer>
+</body>
+</html>

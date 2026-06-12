@@ -1,0 +1,7 @@
+{
+  "name": "average-ide-landing",
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
