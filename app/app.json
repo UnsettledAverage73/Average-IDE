@@ -29,8 +29,9 @@
     ],
     "extra": {
       "eas": {
-        "projectId": "27072a44-a957-4f6a-bc04-8994ecb53683"
+        "projectId": "894c1777-b15c-4db5-b6e2-88f5c2a7474b"
       }
-    }
+    },
+    "owner": "unsettledaverage"
   }
 }
