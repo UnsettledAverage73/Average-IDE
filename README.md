@@ -2,59 +2,31 @@
 
 Average is a privacy-first, offline-capable hybrid IDE platform that integrates Large Language Models (LLMs) directly into your workflow. It consists of a mobile controller (Expo/React Native), a local system node (Python/FastAPI), and a relay server for seamless connectivity.
 
-## 🚀 Quick Start
+## 🚀 Quick Start (Automated)
 
-### 1. Prerequisites
-- **Node.js**: v18 or higher.
-- **Python**: v3.8 or higher.
-- **Ollama**: Installed and running (`ollama serve`).
-- **Models**: Pull required models:
-  ```bash
-  ollama pull qwen2.5:0.5b
-  ollama pull nomic-embed-text
-  ```
+Run one command to start everything:
+- **Linux/macOS**: `./launch.sh`
+- **Windows**: `launch.bat`
 
-### 2. Setup the Relay Server
-The relay server facilitates communication between the mobile app and the backend.
-```bash
-cd relay
-npm install
-node server.js
-```
-*The relay runs on port 3000 by default.*
+---
 
-### 3. Setup the Backend (Local Node)
-The backend handles AI inference, file management, and tool execution.
-```bash
-cd backend
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-pip install -r requirements.txt
-python main.py
-```
-*The backend runs on port 8000 and connects to the relay at ws://localhost:3000.*
+## 📱 Mobile Applications (Android & iOS)
 
-### 4. Setup the Mobile App (Web)
-The mobile app is your interface to the system. You can run it locally or deploy it to Vercel.
+While you can use the [Web App](https://dist-beige-omega-65.vercel.app), you can also build native binaries for the best experience.
 
-**Local Development:**
-```bash
-cd app
-npm install
-npx expo start --tunnel
-```
+### Build with EAS (Expo Application Services)
+1. Install EAS CLI: `npm install -g eas-cli`
+2. Login: `eas login`
+3. Configure: `cd app && eas build:configure`
+4. Build:
+   - **Android**: `eas build --platform android --profile preview`
+   - **iOS**: `eas build --platform ios --profile preview`
 
-**Deploy to Vercel:**
-1. Export the web build:
-   ```bash
-   cd app
-   npx expo export -p web
-   ```
-2. Deploy the `dist` folder:
-   ```bash
-   cd dist
-   vercel --prod
-   ```
+---
+
+## 🌐 Global Links
+- **Official Website**: [https://average-ide-landing.vercel.app](https://average-ide-landing.vercel.app)
+- **Web App**: [https://dist-beige-omega-65.vercel.app](https://dist-beige-omega-65.vercel.app)
 
 ## 🌐 Global Distribution
 To serve Average IDE to the world:
